@@ -36,17 +36,18 @@ export function deleteItem(request: Request, response: Response){
             if (error) {
               throw error
             }
-    
+
             if(results.rows[0]){
     
-              db.query('DELETE FROM items WHERE id = $1', 
+              db.query('DELETE FROM items WHERE id = $1 OR name = $2', 
               [
-                request.params.id
+                request.params.id,
+                request.body.byName
               ], (error, results) => {
                 if (error) {
                   throw error
                 }
-                response.status(201).json({id:request.params.id})
+                response.status(201).json({id:parseInt(request.params.id)})
               })
             }else{
                 response.status(200).json({'error':'NO access!'})
@@ -89,7 +90,7 @@ export function moveItem(request: Request, response: Response){
                   if (error) {
                     throw error
                   }
-                  response.status(201).json({id:request.params.id})
+                  response.status(201).json({id:parseInt(request.params.id)})
                 }
               )
             }else{

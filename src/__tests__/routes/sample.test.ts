@@ -1,10 +1,6 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import router from '../../routes/users';
-import { getUsers } from '../../handlers/users';
 import request from 'supertest';
-
 import app from '../../app';
+import { getUsers } from '../../handlers/users';
 
 jest.mock('../../handlers/users');
 
@@ -19,13 +15,12 @@ describe('Check get users', () => {
     
     expectedMessage = 'Receiving now tested';
     (getUsers as jest.Mock).mockImplementation(async (req, res) => {
-        console.log('aaaaaaaaaaaaaaaaaaaaaaaaa')
         res.status(200).send(expectedMessage);
     });
 
-    const response = await request(app).get('/users').send();
+    const response = await request(app).get('/users');
     expect(response.status).toBe(200);
-    expect(response.body).toBe(expectedMessage);
+    expect(response.text).toBe(expectedMessage);
 
   });
 

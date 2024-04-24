@@ -1,9 +1,5 @@
-import { Pool } from "pg";
+import sqlite3 from 'sqlite3'
+import { open } from 'sqlite'
 
-export const db = new Pool({
-  user: 'decadis',
-  password: 'decadis1',
-  host: 'localhost',
-  port: 5432, // default Postgres port
-  database: 'Decadis'
-});
+
+export const db = new sqlite3.Database(':memory:')

@@ -1,6 +1,10 @@
 import { Request, Response } from "express"
 import  { db } from '../db'
 
+export function getActions(request: Request, response: Response){}
+export function getUserAction(request: Request, response: Response){}
+
+/*
 export function getActions(request: Request, response: Response){
 
     try {
@@ -45,3 +49,4 @@ export function getUserAction(request: Request, response: Response){
     }
     
 }
+*/

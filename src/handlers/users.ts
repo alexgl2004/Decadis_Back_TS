@@ -1,6 +1,17 @@
 import { Request, Response } from "express"
 import  { db } from '../db'
 
+export function getUsers(request: Request, response: Response){}
+export function getUser(request: Request, response: Response){}
+export function createUser(request: Request, response: Response){}
+export function updateUser(request: Request, response: Response){}
+export function deteleUser(request: Request, response: Response){}
+
+db.each('SELECT * FROM actions', (err, row:any) => {
+  console.log(`${row.id}, ${row.name}`)
+})
+
+/*
 export function getUsers(request: Request, response: Response){
 
 try {
@@ -49,11 +60,7 @@ export function getUser(request: Request, response: Response){
 export function createUser(request: Request, response: Response){
 
     try {
-/*
-        if(request.body.firstname ||
-            request.body.lastname ||
-            request.body.email){
-*/
+
             db.query(
                 'INSERT INTO users (firstname, lastname, email) VALUES ($1, $2, $3) RETURNING *', 
                 [
@@ -92,11 +99,7 @@ export function createUser(request: Request, response: Response){
                 
                 }
             )
-/*            
-        }else{
-            response.status(406)
-        }
-*/
+
     } catch (err) {
         console.error(err);
         response.status(500).send('Internal Server Error (add USER)');
@@ -195,3 +198,4 @@ export function deteleUser(request: Request, response: Response){
     }
 
 }
+*/

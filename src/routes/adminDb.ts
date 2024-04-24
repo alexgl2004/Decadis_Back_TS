@@ -6,8 +6,6 @@ import {
 
 const router : Router = Router();
 
-console.log('aaa')
-
 router.get("/", resetDb);
 
 export default router;

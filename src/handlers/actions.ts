@@ -17,7 +17,7 @@ export function getActions(request: Request, response: Response){
     
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (get USERs)');
+        response.status(500).send('Internal Server Error (get Actions)');
     }
 
 }
@@ -41,7 +41,7 @@ export function getUserAction(request: Request, response: Response){
     
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (get USER)');
+        response.status(500).send('Internal Server Error (get Actions of User)');
     }
     
 }

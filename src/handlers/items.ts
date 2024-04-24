@@ -17,7 +17,7 @@ export function getItemsPositions(request: Request, response: Response){
     
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (get USERs)');
+        response.status(500).send('Internal Server Error (get Positions)');
     }
 
 }
@@ -57,7 +57,7 @@ export function deleteItem(request: Request, response: Response){
         )
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (delete USER)');
+        response.status(500).send('Internal Server Error (delete Item)');
     }
     
 }
@@ -101,7 +101,7 @@ export function moveItem(request: Request, response: Response){
         )
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (update USER)');
+        response.status(500).send('Internal Server Error (update Item)');
     }
     
 }
@@ -144,7 +144,7 @@ export function createItem(request: Request, response: Response){
     
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (add USER)');
+        response.status(500).send('Internal Server Error (add Item)');
     }
     
 }
@@ -186,7 +186,7 @@ export function getItem(request: Request, response: Response){
     
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (get USER)');
+        response.status(500).send('Internal Server Error (get Item)');
     }
     
 }
@@ -207,7 +207,7 @@ export function getItems(request: Request, response: Response){
 
     } catch (err) {
         console.error(err);
-        response.status(500).send('Internal Server Error (get USERs)');
+        response.status(500).send('Internal Server Error (get Items)');
     }
     
 }

@@ -5,7 +5,6 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import actionsRouter from './routes/actions';
 import itemsRouter from './routes/items';
-import adminRouter from './routes/adminDb';
 
 const app: Express = express()
 
@@ -15,6 +14,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/actions', actionsRouter);
 app.use('/items', itemsRouter);
-app.use('/adminDb', adminRouter);
+
 
 export default app;
